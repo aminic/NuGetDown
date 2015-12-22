@@ -139,6 +139,9 @@ namespace NuGetDown
                 if (string.IsNullOrEmpty(message))
                     message = string.Format("{0} down OK.", version);
                 Console.WriteLine(message);
+                var r =new Random();
+                var time = r.Next(11,30);
+                System.Threading.Thread.Sleep(time);
 
                 //////////////////////////////////
                 //multi thread down
