@@ -141,7 +141,7 @@ namespace NuGetDown
                 Console.WriteLine(message);
                 var r =new Random();
                 var time = r.Next(11,30);
-                System.Threading.Thread.Sleep(time);
+                System.Threading.Thread.Sleep(time*1000);
 
                 //////////////////////////////////
                 //multi thread down
