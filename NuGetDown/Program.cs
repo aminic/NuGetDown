@@ -115,6 +115,12 @@ namespace NuGetDown
                 var url = string.Format(RealVersionUrl, packageName.ToLower(), version);
                 var filename = string.Format(NupkgFileName, packageName.ToLower(), version);
                 var fullpath = NuPkgFileOutFolder + filename;
+                FileInfo f = new FileInfo(fullpath);
+                if (f.Exists)
+                {
+                    Console.WriteLine("# {0} exist.", fullpath);
+                    continue;
+                }
                 Console.Write("#{0} downloading...", filename);
                 string message = string.Empty;
                 try
@@ -201,7 +207,7 @@ namespace NuGetDown
             d.GetAllVersion();
             d.Down();
             Console.WriteLine("#END#");
-            Console.Read();
+            //Console.Read();
 
 
 
